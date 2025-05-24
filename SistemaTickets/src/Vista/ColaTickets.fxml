@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sistematickets.ColaTicketsController"
+      spacing="10" alignment="CENTER" padding="20">
+    
+    <TableView fx:id="tablaTickets">
+        <columns>
+            <TableColumn fx:id="colTitulo" text="Título"/>
+            <TableColumn fx:id="colEstado" text="Estado"/>
+        </columns>
+    </TableView>
+    
+    <Button text="Deshacer último cambio" onAction="#deshacerEstado"/>
+</VBox>

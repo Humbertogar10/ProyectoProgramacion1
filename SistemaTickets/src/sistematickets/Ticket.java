@@ -9,7 +9,7 @@ public class Ticket {
     private String descripcion;
     private String estado;
     private Usuario creador;
-    private LocalDateTime fechaCreacion;
+    private  LocalDateTime fechaCreacion;
     private Stack<String> historialEstados;
 
     public Ticket(String titulo, String descripcion, Usuario creador) {
@@ -32,5 +32,15 @@ public class Ticket {
             historialEstados.pop();
             this.estado = historialEstados.peek();
         }
+        
     }
+    
+    public String getTitulo(){
+      return titulo;
+    }
+    
+    public String getEstado(){
+        return estado;
+    }
+    
 }

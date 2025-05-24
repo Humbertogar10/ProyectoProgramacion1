@@ -3,6 +3,7 @@ package sistematickets;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Departamento {
@@ -22,5 +23,17 @@ public class Departamento {
 
     public void agregarTicket(Ticket t) {
         colaTickets.add(t);
+    }
+    
+    public Ticket atenderSiguienteTicket() {
+        return colaTickets.poll();
+    }
+    
+    public Ticket verSiguienteTicket() {
+        return colaTickets.peek();
+    }
+    
+    public List<Ticket> getColaTickets() {
+        return (List<Ticket>) colaTickets.peek();
     }
 }

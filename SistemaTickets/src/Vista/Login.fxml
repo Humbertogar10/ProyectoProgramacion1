@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sistematickets.LoginController"
+      spacing="10" alignment="CENTER" padding="20">
+
+    <Label text="Inicio de Sesión" style="-fx-font-size: 16px;" />
+    <TextField fx:id="txtCorreo" promptText="Correo" />
+    <PasswordField fx:id="txtContrasena" promptText="Contraseña" />
+    <Button text="Iniciar sesión" onAction="#iniciarSesion" />
+    <Button text="Ir a Registro" onAction="#irARegistro" />
+    <Button text="Ver Estadísticas" onAction="#verEstadisticas" /> 
+    <Button text="Vista Técnico" onAction="#abrirVistaTecnico"/>
+
+    <Label fx:id="lblMensaje" textFill="red" />
+</VBox>

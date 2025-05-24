@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sistematickets.EstadisticasController"
+      spacing="10" alignment="CENTER" padding="20">
+
+    <Label text="Resumen de Tickets" style="-fx-font-size: 16px;"/>
+
+    <Label fx:id="lblPendientes" />
+    <Label fx:id="lblProceso" />
+    <Label fx:id="lblResueltos" />
+    <Label fx:id="lblCerrados" />
+
+    <Button text="Cerrar" onAction="#cerrarVentana"/>
+</VBox>
