@@ -11,9 +11,24 @@ public class RegistroUsuarioController {
     @FXML private Label lblMensaje;
 
     @FXML
-    public void registrar() {
-        Usuario nuevo = new Usuario(txtNombre.getText(), txtCorreo.getText(), txtContrasena.getText());
-        Sistema.registrarUsuario(nuevo);
-        lblMensaje.setText("¡Usuario registrado!");
+    public void registrarUsuario() {
+        String nombre = txtNombre.getText();
+        String correo = txtCorreo.getText();
+        String contrasena = txtContrasena.getText();
+
+        if (nombre.isEmpty() || correo.isEmpty() || contrasena.isEmpty()) {
+            lblMensaje.setText("Por favor, complete todos los campos.");
+            return;
+        }
+
+        boolean exito = UsuarioDAO.insertarUsuario(nombre, correo, contrasena);
+        if (exito) {
+            lblMensaje.setText("✅ Usuario registrado con éxito.");
+            txtNombre.clear();
+            txtCorreo.clear();
+            txtContrasena.clear();
+        } else {
+            lblMensaje.setText("❌ Error al registrar. ¿Correo ya registrado?");
+        }
     }
 }

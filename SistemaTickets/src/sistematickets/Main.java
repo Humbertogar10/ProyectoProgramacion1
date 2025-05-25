@@ -9,14 +9,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        // Pre-cargar un usuario y un ticket
-        Usuario admin = new Usuario("Admin", "admin@mail.com", "admin123");
-        Sistema.registrarUsuario(admin);
+        // Llamar al método que asegura que la tabla exista
+        ConexionBD.crearTablaUsuariosSiNoExiste();
 
-        Ticket ejemplo = new Ticket("Problema de red", "No hay internet", admin);
-        Sistema.registrarTicket(ejemplo);
-
-        // Cargar la vista de Login
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Login.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
